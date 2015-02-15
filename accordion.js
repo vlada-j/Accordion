@@ -20,16 +20,22 @@
 		cont.addClass('accordion');
 		panels.addClass('ac-panel');
 		headers.click(function() {
-			panels.removeClass('open');
-			contents.css('height','');
-			var _he=$(this), _pa=_he.parent(), _co=_pa.children('.ac-content');
-			_pa.addClass('open');
-			_co.css('height', _co[0].scrollHeight+'px')
+			var _he=$(this),
+				_pa=_he.parent(),
+				_co=_pa.children('.ac-content'),
+				isOpen=_pa.hasClass('open');
+
+			hAll();
+			if(options.selfClose && isOpen) {
+			} else {
+				_pa.addClass('open');
+				_co.css('height', _co[0].scrollHeight+'px');
+			}
 		});
 
 		function hAll(){
 			panels.removeClass('open');
-			$(contents).each(function(){this.style.height=null;});
+			contents.css('height','');
 		}
 
 		if(options.outsideClose) {
@@ -37,7 +43,10 @@
 		}
 	}
 
-	Accordion.DEFAULTS = {};
+	Accordion.DEFAULTS = {
+		outsideClose:true,
+		selfClose:true
+	};
 
 	$.fn.Accordion = function (option) {
 		return this.each(function () {
