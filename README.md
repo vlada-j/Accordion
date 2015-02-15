@@ -7,3 +7,7 @@ You can see a demo here: http://embed.plnkr.co/kYGUg8/preview
 
   - **outsideClose** If you click somewhere outside of the accordion, he will close the panel. Default value is **true**.
   - **selfClose** If you click on open panel, he will close. Default value is **true**.
+
+Use this options when you create accordion.
+Exp:
+     $( '#Demo' ).Accordion( { outsideClose: false, selfClose: false } );
