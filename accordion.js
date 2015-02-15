@@ -1,5 +1,5 @@
 /*
- * jQuery Accordion v1.0
+ * jQuery Accordion v1.1
  * https://github.com/vlada-j/Accordion
  *
  * Copyright 2014, Vlada Janosevic
