@@ -9,5 +9,5 @@ You can see a demo here: http://embed.plnkr.co/kYGUg8/preview
   - **selfClose** If you click on open panel, he will close. Default value is **true**.
 
 Use this options when you create accordion.
-Exp:
-     $( '#Demo' ).Accordion( { outsideClose: false, selfClose: false } );
+
+Exp:  $( '#Demo' ).Accordion( { outsideClose: false, selfClose: false } );
