@@ -11,7 +11,7 @@
 +function ($) {
 	"use strict";
 
-	function Accordion(ele, option){
+	function Accordion(ele, options){
 		var cont = $(ele),
 			panels = cont.children(),
 			headers = panels.children('.ac-header'),
@@ -26,6 +26,15 @@
 			_pa.addClass('open');
 			_co.css('height', _co[0].scrollHeight+'px')
 		});
+
+		function hAll(){
+			panels.removeClass('open');
+			$(contents).each(function(){this.style.height=null;});
+		}
+
+		if(options.outsideClose) {
+			$(document).click(function(e){cont[0].contains(e.target)?0:hAll();});
+		}
 	}
 
 	Accordion.DEFAULTS = {};
